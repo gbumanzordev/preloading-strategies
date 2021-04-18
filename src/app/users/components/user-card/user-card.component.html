@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-title">{{ user.name }}</div>
+  <div class="card-content">
+    <p class="city">🎏 {{ getCity() }}</p>
+    <p>👤 @{{ user.username }}</p>
+    <p>📧 {{ user.email | lowercase }}</p>
+    <p>🏦 {{ user.company.name }}</p>
+    <p>📞 {{ user.phone }}</p>
+  </div>
+  <div class="card-footer">
+    <a [routerLink]="[user.id]">More details</a>
+  </div>
+</div>

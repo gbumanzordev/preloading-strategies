@@ -1,0 +1,11 @@
+@import '~src/scss/card';
+
+.city {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+p {
+  margin-top: 8px;
+}
