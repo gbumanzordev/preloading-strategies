@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './core/components/layout/layout.component';
 import { HomeComponent } from './core/components/home/home.component';
 
@@ -16,11 +16,13 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+        data: { preload: true },
       },
       {
         path: 'todos',
         loadChildren: () =>
           import('./todos/todos.module').then((m) => m.TodosModule),
+        data: { preload: true },
       },
       {
         path: 'posts',
@@ -31,6 +33,7 @@ const routes: Routes = [
         path: 'users',
         loadChildren: () =>
           import('./users/users.module').then((m) => m.UsersModule),
+        data: { preload: true },
       },
     ],
   },
@@ -41,7 +44,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
