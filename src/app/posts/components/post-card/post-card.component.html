@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-title">{{ post.title }}</div>
+  <div class="card-content">
+    {{ post.body }}
+  </div>
+  <div class="card-footer">
+    <a [routerLink]="[post.id]">More details</a>
+  </div>
+</div>
