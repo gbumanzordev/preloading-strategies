@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './core/components/layout/layout.component';
 import { HomeComponent } from './core/components/home/home.component';
-import { OnDemandPreloadStrategy } from './core/strategies/on-demand-preload-strategy.service';
-import { NetworkAwareStrategy } from './core/strategies/network-aware-strategy.service';
 
 const routes: Routes = [
   {
@@ -23,19 +21,16 @@ const routes: Routes = [
         path: 'todos',
         loadChildren: () =>
           import('./todos/todos.module').then((m) => m.TodosModule),
-        data: { preload: true },
       },
       {
         path: 'posts',
         loadChildren: () =>
           import('./posts/posts.module').then((m) => m.PostsModule),
-        data: { preload: true },
       },
       {
         path: 'users',
         loadChildren: () =>
           import('./users/users.module').then((m) => m.UsersModule),
-        data: { preload: false },
       },
     ],
   },
@@ -46,11 +41,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, {
-      preloadingStrategy: NetworkAwareStrategy,
-    }),
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
