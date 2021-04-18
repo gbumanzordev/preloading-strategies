@@ -4,6 +4,7 @@ import { LayoutComponent } from './core/components/layout/layout.component';
 import { HomeComponent } from './core/components/home/home.component';
 import { SelectivePreloadStrategy } from './core/strategies/selective-preload-strategy.service';
 import { NetworkAwareStrategy } from './core/strategies/network-aware-strategy.service';
+import { OnDemandPreloadStrategy } from './core/strategies/on-demand-preload-strategy.service';
 
 const routes: Routes = [
   {
@@ -48,7 +49,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      preloadingStrategy: NetworkAwareStrategy,
+      preloadingStrategy: OnDemandPreloadStrategy,
     }),
   ],
   exports: [RouterModule],

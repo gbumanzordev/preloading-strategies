@@ -26,8 +26,6 @@ export class OnDemandPreloadStrategy implements PreloadingStrategy {
 
   preloadCheck(route: Route, preloadOptions: OnDemandPreloadOptions): boolean {
     return (
-      route.data &&
-      route.data.preload &&
       [route.path, '*'].includes(preloadOptions.routePath) &&
       preloadOptions.preload
     );
