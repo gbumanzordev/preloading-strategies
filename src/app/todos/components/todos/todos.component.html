@@ -1,0 +1,7 @@
+<h1>Todo List</h1>
+<div class="grid">
+  <app-todo-card
+    *ngFor="let todo of todos$ | async"
+    [todo]="todo"
+  ></app-todo-card>
+</div>

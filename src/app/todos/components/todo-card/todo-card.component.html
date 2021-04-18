@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-title" [class.completed]="todo.completed">
+    {{ todo.title }}
+  </div>
+  <div class="card-content">
+    <input
+      type="checkbox"
+      [checked]="todo.completed"
+      [id]="todo.id + '-todo'"
+    />
+    <label [for]="todo.id + '-todo'"> Completed</label>
+  </div>
+</div>
