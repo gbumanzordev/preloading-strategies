@@ -10,13 +10,28 @@
       >
     </li>
     <li>
-      <a routerLink="/todos" routerLinkActive="active">Todos</a>
+      <a
+        routerLink="/todos"
+        routerLinkActive="active"
+        (mouseenter)="preloadChunk('todos')"
+        >Todos</a
+      >
     </li>
     <li>
-      <a routerLink="/posts" routerLinkActive="active">Posts</a>
+      <a
+        routerLink="/posts"
+        routerLinkActive="active"
+        (mouseenter)="preloadChunk('posts')"
+        >Posts</a
+      >
     </li>
     <li>
-      <a routerLink="/users" routerLinkActive="active">Users</a>
+      <a
+        routerLink="/users"
+        routerLinkActive="active"
+        (mouseenter)="preloadChunk('users')"
+        >Users</a
+      >
     </li>
   </ul>
 </nav>
