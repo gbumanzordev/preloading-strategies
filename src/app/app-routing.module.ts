@@ -22,16 +22,19 @@ const routes: Routes = [
         path: 'todos',
         loadChildren: () =>
           import('./todos/todos.module').then((m) => m.TodosModule),
+         data: { preload: true },
       },
       {
         path: 'posts',
         loadChildren: () =>
           import('./posts/posts.module').then((m) => m.PostsModule),
+        data: { preload: true },
       },
       {
         path: 'users',
         loadChildren: () =>
           import('./users/users.module').then((m) => m.UsersModule),
+        data: { preload: false },
       },
     ],
   },
